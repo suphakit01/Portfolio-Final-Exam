@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suphakit Nch Portfolio</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <!-- Style css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awsome -->
+    <script src="https://kit.fontawesome.com/97b2bcbd9f.js" crossorigin="anonymous"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Title content info -->
+        <div class="row mt-5 mb-5">
+            <div class="col-6 profileImg_container">
+                <div class="gradient-border">
+                    <img src="/ProjectImg/pro_img.JPG" class="profileImg">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="name">
+                    <h3>Suphakit Nachom</h3>
+                    <p>Multimedia and Game Development | IT @KMITL</p>
+                </div>
+
+                <div class="contact">
+                    <p><a href="tel:093-242-9872"><i class="fas fa-phone"></i> 093-242-9872</a></p>
+                    <p><a href="mailto:works@suphakitnch.com"><i class="fas fa-envelope"></i>
+                            works@suphakitnch.com</a>
+                    </p>
+                    <p><a href="https://github.com/suphakit01" target="_blank"><i class="fab fa-github-square"></i>
+                            suphakit01</a></p>
+                    <p><a href="https://www.youtube.com/channel/UC0Cpjf9ausMSh3Arycbyodg" target="_blank"><i
+                                class="fab fa-youtube-square"></i></i>
+                            Suphakit Nch</a></p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tab Nav -->
+        <ul class="nav nav-tabs nav-center pt-lg-3 pt-2" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects"
+                    type="button" role="tab" aria-controls="projects" aria-selected="true">PROJECTS</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button"
+                    role="tab" aria-controls="about" aria-selected="false">ABOUT</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content pt-4" id="myTabContent">
+
+            <!-- Tab 1 -->
+            <div class="tab-pane fade show active pb-4" id="projects" role="tabpanel" aria-labelledby="projects-tab">
+                <div class="container">
+
+                    <div class="row p-md-5 pt-md-0">
+                        <!-- my card -->
+                        <div class="col-4 p-1 p-md-2" v-for="(srcProject, index) in projectInfo">
+                            <div class="cardLoop img-hover-zoom" data-bs-toggle="modal" data-bs-target="#myModal"
+                                @click="openCard(index)">
+                                <div class="cardLoopVideo" v-if="srcProject.sourceType == 'video'">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <img :src="'/ProjectImg/cover/' + srcProject.cover" class="w-100"/>
+                                <div class="cardLoopOverlay">
+                                    <h3 class="text-white text-center" v-html="srcProject.title"></h3>
+                                    <hr>
+                                    <p class="text-white">
+                                        <span class="mr-2" v-for="(tag, index) in srcProject.tag" :key="index">#{{ tag
+                                            }} </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2 -->
+            <div class="tab-pane fade pt-4" id="about" role="tabpanel" aria-labelledby="about-tab">
+                <div class="container">
+                    <div class="tab2">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <h4><i class="fas fa-star"></i> Info</h4><br>
+                                <p class="mb-0"><b>Name :</b> Suphakit Nachom</p>
+                                <p><b>Address :</b> 653/16 RNP Place Chalongkrung1 Ladkrabang Bangkok 10520</p><br><br>
+
+                                <h4><i class="fas fa-star"></i> Education</h4><br>
+                                <ul>
+                                    <li>May 2015 – Mar 2017<br>Chiang Kham Wittayakhom School</li>
+                                    <li>Aug 2018 - Now<br>Multimedia and Game Development<br>Faculty of Information
+                                        Technology KMITL</li>
+                                </ul><br><br>
+
+                                <h4><i class="fas fa-star"></i> Experiences</h4><br>
+                                <ul>
+                                    <li>June 2019 – July 2019<br>Intern at Office of the National Economic and Social
+                                        Development Council (NESDC)</li>
+                                    <li>Aug 2020 – Dec 2020<br>Teacher Assistant : Web Technology</li>
+                                    <li>Aug 2020 – Dec 2020<br>Teacher Assistant : Data Structures and Algorithm</li>
+                                    <li>Jan 2021 – Now<br>Teacher Assistant : Computer Graphic and Animation</li>
+                                </ul><br><br>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <h4><i class="fas fa-star"></i> Activities</h4><br>
+                                <p><b>2018</b></p><br>
+                                <ul>
+                                    <li>23-25 aug | IT KMITL Open House 2018 (staff photographer)</li>
+                                    <li>27 nov | ITGG (staff photographer)</li>
+                                    <li>29 nov | IT ambassador (staff photographer)</li>
+                                </ul><br>
+                                <p><b>2019</b></p><br>
+                                <ul>
+                                    <li>2 feb | IT3K (staff photographer)</li>
+                                    <li>27-28 may | จิตอาสาครั้งที่ 14 ม.ท.ศ. เชียงใหม่</li>
+                                    <li>30 June - 2 July | IT Camp 15 (staff video presentation)</li>
+                                    <li>5 aug - 7 sep | Head โครงการ ITGG 2019</li>
+                                    <li>10 aug | Line Chat bot โดย Line company (Thailand)</li>
+                                    <li>10 sep | ตัดต่อ VTR และคุมกล้อง LIVE งาน IT Ambassador 2019</li>
+                                    <li>8 feb | ตากล้อง งาน IT3k 2019</li>
+                                    <li>| Head งานวิดีโอของ IT Camp 17</li>
+                                </ul><br>
+                                <p><b>2020</b></p><br>
+                                <ul>
+                                    <li>22 aug - 13 sep | เข้าร่วม Workshop “ปลูกความคิด พิชิตธุระกิจเกม” ณ
+                                        คณะเทคโนโลยีสารสนเทศ</li>
+                                    <li>11 july | เข้าร่วมโครงการอบรม LINE Liff จากทีม Line Developer ณ Far East Fame
+                                        Line DDB PLC</li>
+                                </ul><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4><i class="fas fa-star"></i> Skills</h4><br>
+                                <img class="iconSkill mb-5" v-for="j in 14" :src="'/IconSkills/' + j + '.png'"
+                                    class="w-100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" id="myModal">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <h5 class="modal-title">{{ projectInfo[modalIndex].title }}</h5> -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            @click="stopVideo"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- video embled -->
+                        <iframe v-if="projectInfo[modalIndex].sourceType == 'video'" width="100%" height="450"
+                            :src="projectInfo[modalIndex].src[0]" id="yvideo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen frameborder="0"></iframe>
+
+                        <!-- slid image -->
+                        <div v-if="projectInfo[modalIndex].sourceType == 'website'" id="carouselExampleFade"
+                            class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div v-for="(img, index) in projectInfo[modalIndex].src"
+                                    class="carousel-fade carousel-item" :class="{ 'active' : index == 0 }">
+                                    <img :src="'ProjectImg/' + img + '.png'" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="p-3">
+                            <span class="mt-5" style="color: var(--ci4);" v-for="i in projectInfo[modalIndex].tag">#{{ i
+                                }} </span><br>
+                            <div class="titleModal">
+                                <h2 style="margin-right: 1rem;">{{ projectInfo[modalIndex].title }}</h2>
+                                <span v-if="projectInfo[modalIndex].sourceType == 'website'"><a
+                                        :href="projectInfo[modalIndex].link" target="_blank"><i
+                                            class="fad fa-external-link"></i></a></span>
+                            </div>
+
+                            <br><br>
+                            <p v-html="projectInfo[modalIndex].detail"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        © 2021 Suphakit Nachom. All rights reserved.
+    </div>
+
+</body>
+<script>
+
+    var app = new Vue({
+        el: "#app",
+        data: {
+            modalIndex: 0,
+            projectInfo: [
+                {
+                    title: "The Bermuda",
+                    tag: [
+                        "Unreal Engine",
+                        "Cinematics"
+                    ],
+                    detail: "Advanced Game Development 2020 | KMITL©Suphakit Nachom (creative, Landscape, Lighting, Cinematics)",
+                    cover: "TheBermuda.png",
+                    date: "Mar 2021",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/BGhh3mm3Bds"
+                    ]
+                },
+                {
+                    title: "washed your hands?",
+                    tag: [
+                        "Maya",
+                        "Animation"
+                    ],
+                    detail: "computer graphic and animation project 2019 | KMITL<br>©Suphakit Nachom",
+                    cover: "wachedYourHands.jpg",
+                    date: "Jul 2020",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/eFvUzsdLDKA"
+                    ]
+                },
+                {
+                    title: "3D model showreel 2019",
+                    tag: [
+                        "Maya",
+                        "Showreel"
+                    ],
+                    detail: "computer graphic and animation project 2019 | KMITL<br>©Suphakit Nachom",
+                    cover: "Showreel.jpg",
+                    date: "Jul 2020",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/lt6Gzjo2DQA"
+                    ]
+                },
+                {
+                    title: "สมัคร สมาน กับโคกหนองนาโมเดล",
+                    tag: [
+                        "Maya",
+                        "Animation"
+                    ],
+                    detail: "โคกหนองนาโมเดล การบริหารจัดการทรัพยากรน้ำอย่างมีประสิทธิภาพ<br>©Suphakit Nachom (creative, Rigger, modeller, animator, editor)",
+                    cover: "KokNongNa.jpg",
+                    date: "Jul 2020",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/FdycujIZj3o"
+                    ]
+                },
+                {
+                    title: "School Bus",
+                    tag: [
+                        "Maya",
+                        "Animation"
+                    ],
+                    detail: "3D Animation project 2020 | KMITL©Suphakit Nachom (creative team, modeller, animator, editor)",
+                    cover: "SchoolBus.jpg",
+                    date: "Dec 2020",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/sqyNkA_ekC4"
+                    ]
+                },
+                {
+                    title: "The Ice Cream",
+                    tag: [
+                        "Maya",
+                        "Animation"
+                    ],
+                    detail: "computer graphic and animation project 2019 | KMITL<br>©Suphakit Nachom (creative, Rigger, modeller, animator, editor)",
+                    cover: "TheIceCream.jpg",
+                    date: "Jul 2020",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/2EYYFXk61a8"
+                    ]
+                },
+                {
+                    title: "Adlenture",
+                    tag: [
+                        "Website"
+                    ],
+                    detail: "Web Technology 2019 | IT KMITL<br>©Suphakit Nachom",
+                    cover: "Adlensture.png",
+                    date: "Dec 2019",
+                    sourceType: "website",
+                    link: "https://suphakit01.github.io/adlensture/",
+                    src: [
+                        "Adlenture_1",
+                        "Adlenture_2",
+                        "Adlenture_3",
+                        "Adlenture_4"
+                    ]
+                },
+                {
+                    title: "Dice Your Big Project",
+                    tag: [
+                        "Website"
+                    ],
+                    detail: "Multimedia Programming 2020 | IT KMITL<br>©Suphakit Nachom",
+                    cover: "DicePJ.png",
+                    date: "Dec 2020",
+                    sourceType: "website",
+                    link: "https://suphakit01.github.io/Rocket-Project/",
+                    src: [
+                        "DicePJ_1",
+                        "DicePJ_2",
+                        "DicePJ_3",
+                        "DicePJ_4"
+                    ]
+                },
+                {
+                    title: "Slum Klong Toei",
+                    tag: [
+                        "Website",
+                        "Front-end"
+                    ],
+                    detail: "Multimedia Programming 2020 | IT KMITL<br>©Suphakit Nachom",
+                    cover: "Slum.png",
+                    date: "Dec 2020",
+                    sourceType: "website",
+                    link: "https://suphakit01.github.io/Slum-Klong-Toei/",
+                    src: [
+                        "Slum_1",
+                        "Slum_2",
+                        "Slum_3",
+                        "Slum_4"
+                    ]
+                },
+                {
+                    title: "[VTR] IT Ambassador 2019",
+                    tag: [
+                        "Video"
+                    ],
+                    detail: "[VTR] IT Ambassador 2019 | KMITL<br>©Suphakit Nachom",
+                    cover: "ItAmbass.png",
+                    date: "Nov 2019",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://drive.google.com/file/d/1bfuwR6ONReGDApRCT2GRdRoAEDnKcWZS/preview"
+                    ]
+                },
+                {
+                    title: "[VTR] IT Ambassador 2019",
+                    tag: [
+                        "Video"
+                    ],
+                    detail: "IT CAMP 15<br>30th May 2019 - 2nd June 2019<br>Faculty of Information Technology<br>King Monkut's Institute of Technology Ladkrabang",
+                    cover: "ItCamp.jpg",
+                    date: "May 2019",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/EOZc1xZoVz4"
+                    ]
+                },
+                {
+                    title: "[NSC 2021] Tiny House Prototype",
+                    tag: [
+                        "Video",
+                        "NSC"
+                    ],
+                    detail: "ผ่านเข้ารอบคัดเลือกการแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย ครั้งที่ ๒๓<br>The Twenty-Third National Software Contest (NSC 2021)",
+                    cover: "Nsc.png",
+                    date: "Sep 2019",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/ZOpFJdvD2Lk"
+                    ]
+                },
+            ]
+        },
+        methods: {
+            openCard(index) {
+                this.modalIndex = index
+            },
+            stopVideo() {
+                document.querySelector("#yvideo").stopVideo()
+            }
+        }
+    })
+</script>
+
+
+</html>

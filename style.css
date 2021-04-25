@@ -1,0 +1,204 @@
+:root {
+    --ci1: rgb(37, 37, 37) !important;
+    --ci2: rgb(128, 128, 128) !important;
+    --ci4: rgb(172, 172, 172) !important;
+    --ci3: rgb(243, 243, 243) !important;
+    --Prompt: 'Prompt', sans-serif !important;
+}
+
+body {
+    color: var(--ci1);
+    font-family: var(--Prompt);
+    overflow-x: hidden !important;
+    font-weight: 300 !important;
+}
+
+/* Title Content */
+
+.profileImg_container {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-right: 3.5vw;
+}
+
+.profileImg {
+    width: 18vh;
+    border-radius: 100%;
+}
+
+.contact p, a {
+    color: var(--ci2);
+}
+
+.contact p {
+    margin-bottom: 0 !important;
+}
+
+.contact a {
+    text-decoration: none;
+}
+
+/* Nav Tab */
+
+.nav-center {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: #f3f3f3;
+    border-color: #dee2e6 #dee2e6 var(--ci3);
+}
+
+.nav-tabs .nav-link {
+    color: var(--ci4);
+}
+
+/* Tab Content */
+
+.tab-content {
+    background-color: var(--ci3);
+}
+
+.col-4 {
+    padding: 0;
+}
+
+.coverImg {
+    width: 100%;
+    height: auto;
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.iconSkill {
+    width: calc(100% / 14);
+}
+
+/* my modal */
+
+.titleModal {
+    display: inline-flex;
+}
+
+/* footers */
+
+.footer {
+    padding: 3em;
+    background: var(--ci4);
+    color: #fff;
+    text-align: center;
+}
+
+/* Animation Card */
+
+.cardLoop {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 0.1em;
+}
+
+.cardLoop img {
+    display: block;
+    border-radius: 0.1em;
+}
+
+.cardLoopOverlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    /* Black see-through */
+    width: 100%;
+    height: 100%;
+    transition: 0.1s ease;
+    opacity: 0;
+    padding: 1rem;
+}
+
+.cardLoop:hover {
+    /* transform: scale(1.05); */
+    transition: 1s;
+    background-color: #000;
+}
+
+.cardLoop:hover .cardLoopOverlay {
+    opacity: 1;
+}
+
+.img-hover-zoom {
+    overflow: hidden;
+}
+
+.img-hover-zoom img {
+    transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.1);
+}
+
+.cardLoopVideo {
+    position: absolute;
+    top: 0.5em;
+    right: 0.75em;
+    color: #fff;
+    font-size: 1.35em;
+}
+
+/* Animation Edge Profile */
+
+.gradient-border {
+    --borderWidth: 5px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: 50%;
+}
+
+.gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: -1;
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+    border-radius: 50%;
+}
+
+@-webkit-keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
