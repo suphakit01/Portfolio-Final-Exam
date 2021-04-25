@@ -33,21 +33,23 @@
 <body>
     <div id="app">
         <!-- Title content info -->
-        <div class="row mt-5 mb-5">
+        <div class="pt-sm-5 row mt-5 mb-5">
             <div class="col-6 profileImg_container">
                 <div class="gradient-border">
                     <img src="ProjectImg/pro_img.JPG" class="profileImg">
                 </div>
             </div>
-            <div class="col-6">
+            <div class="pb-md-5 col-6">
                 <div class="name">
-                    <h3>Suphakit Nachom</h3>
+                    <h3 class="d-none d-sm-block">Suphakit Nachom</h3>
+                    <h1 class="m-0 d-block d-sm-none">Suphakit</h1>
+                    <h1 class="m-0 d-block d-sm-none">Nachom</h1>
                     <p>3D Artist</p>
                 </div>
 
                 <div class="contact d-none d-sm-block">
                     <p><a href="tel:093-242-9872"><i class="fas fa-phone-square-alt"></i></i> 093-242-9872</a></p>
-                    <p><a href="mailto:works@suphakitnch.com"><i class="fas fa-envelope"></i>
+                    <p><a href="mailto:works@suphakitnch.com"><i class="fas fa-envelope-square"></i></i>
                             works@suphakitnch.com</a>
                     </p>
                     <p><a href="https://github.com/suphakit01" target="_blank"><i class="fab fa-github-square"></i>
@@ -58,8 +60,9 @@
                 </div>
 
                 <div class="contact_small d-block d-sm-none">
+                    <p class="m-0" style="font-size: small;">contact :</p>
                     <a href="tel:093-242-9872"><i class="fas fa-phone-square-alt"></i></i></a>
-                    <a href="mailto:works@suphakitnch.com"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:works@suphakitnch.com"><i class="fas fa-envelope-square"></i></i></a>
                     <a href="https://github.com/suphakit01" target="_blank"><i class="fab fa-github-square"></i></a>
                     <a href="https://www.youtube.com/channel/UC0Cpjf9ausMSh3Arycbyodg" target="_blank"><i
                             class="fab fa-youtube-square"></i></i></a>
@@ -96,14 +99,32 @@
                                     <i class="fas fa-play"></i>
                                 </div>
                                 <img :src="'ProjectImg/Cover/' + srcProject.cover" class="w-100" />
-                                <div class="cardLoopOverlay">
-                                    <h3 class="text-white text-center" v-html="srcProject.title"></h3>
-                                    <hr>
-                                    <p class="text-white">
-                                        <span class="mr-2" v-for="(tag, index) in srcProject.tag" :key="index">#{{ tag
-                                            }} </span>
-                                    </p>
+
+                                <div class="d-none d-lg-block">
+                                    <div class="cardLoopOverlay">
+                                        <h3 class="text-white text-center" v-html="srcProject.title"></h3>
+                                        <hr>
+                                        <p class="text-white">
+                                            <span class="mr-2" v-for="(tag, index) in srcProject.tag" :key="index">#{{
+                                                tag
+                                                }} </span>
+                                        </p>
+                                    </div>
                                 </div>
+
+                                <div class="d-lg-none">
+                                    <div class="cardLoopOverlay">
+                                        <b>
+                                            <p class="text-white text-center" v-html="srcProject.title"></p>
+                                        </b>
+                                        <p class="text-white" style="font-size:xx-small;">
+                                            <span class="mr-2" v-for="(tag, index) in srcProject.tag" :key="index">#{{
+                                                tag
+                                                }} </span>
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
