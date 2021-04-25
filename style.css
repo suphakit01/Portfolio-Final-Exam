@@ -39,6 +39,11 @@ body {
     text-decoration: none;
 }
 
+.contact_small {
+    color: var(--ci2);
+    font-size: x-large;
+}
+
 /* Nav Tab */
 
 .nav-center {
@@ -202,3 +207,12 @@ body {
         background-position: 0% 50%;
     }
 }
+
+/* @Media query */
+
+@media screen and (max-width: 576px) {
+    .iconSkill {
+        width: calc(100% / 7);
+        padding: 0.25rem;
+    }
+  }

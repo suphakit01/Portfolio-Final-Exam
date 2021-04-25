@@ -42,11 +42,11 @@
             <div class="col-6">
                 <div class="name">
                     <h3>Suphakit Nachom</h3>
-                    <p>Multimedia and Game Development | IT @KMITL</p>
+                    <p>3D Artist</p>
                 </div>
 
-                <div class="contact">
-                    <p><a href="tel:093-242-9872"><i class="fas fa-phone"></i> 093-242-9872</a></p>
+                <div class="contact d-none d-sm-block">
+                    <p><a href="tel:093-242-9872"><i class="fas fa-phone-square-alt"></i></i> 093-242-9872</a></p>
                     <p><a href="mailto:works@suphakitnch.com"><i class="fas fa-envelope"></i>
                             works@suphakitnch.com</a>
                     </p>
@@ -55,6 +55,14 @@
                     <p><a href="https://www.youtube.com/channel/UC0Cpjf9ausMSh3Arycbyodg" target="_blank"><i
                                 class="fab fa-youtube-square"></i></i>
                             Suphakit Nch</a></p>
+                </div>
+
+                <div class="contact_small d-block d-sm-none">
+                    <a href="tel:093-242-9872"><i class="fas fa-phone-square-alt"></i></i></a>
+                    <a href="mailto:works@suphakitnch.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/suphakit01" target="_blank"><i class="fab fa-github-square"></i></a>
+                    <a href="https://www.youtube.com/channel/UC0Cpjf9ausMSh3Arycbyodg" target="_blank"><i
+                            class="fab fa-youtube-square"></i></i></a>
                 </div>
             </div>
 
@@ -87,7 +95,7 @@
                                 <div class="cardLoopVideo" v-if="srcProject.sourceType == 'video'">
                                     <i class="fas fa-play"></i>
                                 </div>
-                                <img :src="'ProjectImg/Cover/' + srcProject.cover" class="w-100"/>
+                                <img :src="'ProjectImg/Cover/' + srcProject.cover" class="w-100" />
                                 <div class="cardLoopOverlay">
                                     <h3 class="text-white text-center" v-html="srcProject.title"></h3>
                                     <hr>
@@ -160,8 +168,8 @@
                         <div class="row">
                             <div class="col">
                                 <h4><i class="fas fa-star"></i> Skills</h4><br>
-                                <img class="iconSkill mb-5" v-for="j in 14" :src="'IconSkills/' + j + '.png'"
-                                    class="w-100" />
+                                <img class="iconSkill" v-for="j in 14" :src="'IconSkills/' + j + '.png'"
+                                    class="w-100" /> <br><br>
                             </div>
                         </div>
                     </div>
@@ -174,14 +182,13 @@
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <!-- <h5 class="modal-title">{{ projectInfo[modalIndex].title }}</h5> -->
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                            @click="stopVideo"></button>
+                            @click="stopVideo(modalIndex)"></button>
                     </div>
                     <div class="modal-body">
                         <!-- video embled -->
                         <iframe v-if="projectInfo[modalIndex].sourceType == 'video'" width="100%" height="450"
-                            :src="projectInfo[modalIndex].src[0]" id="yvideo"
+                            :src="projectInfo[modalIndex].src[0]" :id="'yvideo' + modalIndex"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen frameborder="0"></iframe>
 
@@ -232,7 +239,6 @@
 
 </body>
 <script>
-
     var app = new Vue({
         el: "#app",
         data: {
@@ -429,12 +435,13 @@
             openCard(index) {
                 this.modalIndex = index
             },
-            stopVideo() {
-                document.querySelector("#yvideo").stopVideo()
-            }
+            stopVideo(modalIndex) {
+                console.log(modalIndex)
+                console.log('yvideo' + modalIndex)
+                document.querySelector("#" + 'yvideo' + modalIndex).setAttribute('src', '')
+            },
         }
     })
 </script>
-
 
 </html>
