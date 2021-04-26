@@ -51,6 +51,7 @@ body {
 .contact_icon:hover {
     background: linear-gradient(to top right, #30cfd0 0%, #330867 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--ci1);
 }
@@ -104,6 +105,7 @@ body {
 .modal_tag {
     background: linear-gradient(to top right, #30cfd0 0%, #330867 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--ci4);
 }
@@ -233,4 +235,50 @@ body {
         width: calc(100% / 7);
         padding: 0.25rem;
     }
+}
+
+/* My Timeline */
+
+.timeline {
+    position: relative;
+    counter-reset: list 0;
+}
+
+.timeline-content {
+    list-style: none;
+    padding-left: -1rem;
+}
+
+.timeline-item {
+    list-style: none;
+    border-left: 3px solid #d4d4d4;
+}
+
+.timeline-item:last-child {
+    border-left-color: transparent;
+}
+
+.timeline-title {
+    margin: 0;
+    padding: 0;
+}
+
+.timeline-title:before {
+    color: transparent;
+    position: relative;
+    left: -12px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    /* line-height: 40px; */
+    text-align: center;
+    border-radius: 50%;
+    background-color: #d4d4d4;
+    counter-increment: list;
+    content: counter(list);
+}
+
+.timeline-text {
+    margin: 0;
+    padding: 40px;
 }
