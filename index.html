@@ -120,13 +120,8 @@
                                 <div class="d-lg-none">
                                     <div class="cardLoopOverlay">
                                         <b>
-                                            <p class="text-white text-center" v-html="srcProject.title"></p>
+                                            <p style="font-size:x-small;" class="text-white text-center" v-html="srcProject.title"></p>
                                         </b>
-                                        <p class="text-white" style="font-size:xx-small;">
-                                            <span class="mr-2" v-for="(tag, index) in srcProject.tag" :key="index">#{{
-                                                tag
-                                                }} </span>
-                                        </p>
                                     </div>
                                 </div>
 
@@ -239,7 +234,7 @@
                             </button>
                         </div>
                         <div class="p-3">
-                            <a class="modal_tag"><span class="mt-5" v-for="i in projectInfo[modalIndex].tag">#{{ i
+                            <a class="modal_tag"><span class="mt-5"  v-for="i in projectInfo[modalIndex].tag">#{{ i
                                 }} </span></a><br>
                             <div class="titleModal">
                                 <h2 style="margin-right: 1rem;">{{ projectInfo[modalIndex].title }}</h2>
