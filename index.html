@@ -32,6 +32,9 @@
 
 <body>
     <div id="app">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
         <!-- Title content info -->
         <div class="pt-sm-5 row mt-5 mb-5">
             <div class="col-6 profileImg_container">
@@ -478,6 +481,12 @@
             },
         }
     })
+
+    // Loading Function
+    function fadeOut() {
+        document.querySelector(".preloader").remove();
+    }
+    setTimeout(fadeOut, 2000);
 </script>
 
 </html>
