@@ -44,6 +44,16 @@ body {
     font-size: x-large;
 }
 
+.contact_icon {
+    transition: transform 1s ease;
+}
+
+/* .contact_icon:hover {
+    background: linear-gradient(to top right, #30cfd0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+
 /* Nav Tab */
 
 .nav-center {
@@ -215,4 +225,4 @@ body {
         width: calc(100% / 7);
         padding: 0.25rem;
     }
-  }
+}
