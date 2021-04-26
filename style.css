@@ -15,12 +15,6 @@ body {
 
 /* Title Content */
 
-/* .name h3,h1 {
-    background: linear-gradient(to top right, #30cfd0 0%, #330867 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
-
 .profileImg_container {
     display: flex;
     align-items: flex-end;
