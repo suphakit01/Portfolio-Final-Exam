@@ -475,18 +475,43 @@
                 this.modalIndex = index
             },
             stopVideo(modalIndex) {
-                console.log(modalIndex)
-                console.log('yvideo' + modalIndex)
-                document.querySelector("#" + 'yvideo' + modalIndex).setAttribute('src', '')
+                console.log("in Fn stopVideo at yvideo" + modalIndex)
+                console.log()
+                // document.querySelector("#" + 'yvideo' + modalIndex).setAttribute('src', '')
+                document.querySelector("#" + 'yvideo' + modalIndex).src = ""
+                this.setSrc()
             },
+            disableScroll() {
+                // Get the current page scroll position
+                scrollTop =
+                    window.pageYOffset || document.documentElement.scrollTop;
+                scrollLeft =
+                    window.pageXOffset || document.documentElement.scrollLeft,
+
+                    // if any scroll is attempted,
+                    // set this to the previous value
+                    window.onscroll = function () {
+                        window.scrollTo(scrollLeft, scrollTop);
+
+                    };
+                setTimeout(() => this.enableScroll(), 3000)
+            },
+            enableScroll() {
+                window.onscroll = function () { };
+            },
+        },
+        mounted() {
+            this.disableScroll()
         }
     })
 
     // Loading Function
+
     function fadeOut() {
         document.querySelector(".preloader").remove();
     }
     setTimeout(fadeOut, 3000);
+
 </script>
 
 </html>
