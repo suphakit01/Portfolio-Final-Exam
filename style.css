@@ -15,6 +15,12 @@ body {
 
 /* Title Content */
 
+.name h3,h1 {
+    background: linear-gradient(to top right, #30cfd0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .profileImg_container {
     display: flex;
     align-items: flex-end;
@@ -48,11 +54,12 @@ body {
     transition: transform 1s ease;
 }
 
-/* .contact_icon:hover {
+.contact_icon:hover {
     background: linear-gradient(to top right, #30cfd0 0%, #330867 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-} */
+    color: var(--ci1);
+}
 
 /* Nav Tab */
 
@@ -98,6 +105,13 @@ body {
 
 .titleModal {
     display: inline-flex;
+}
+
+.modal_tag {
+    background: linear-gradient(to top right, #30cfd0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* color: var(--ci4); */
 }
 
 /* footers */

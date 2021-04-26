@@ -239,8 +239,8 @@
                             </button>
                         </div>
                         <div class="p-3">
-                            <span class="mt-5" style="color: var(--ci4);" v-for="i in projectInfo[modalIndex].tag">#{{ i
-                                }} </span><br>
+                            <a class="modal_tag"><span class="mt-5" v-for="i in projectInfo[modalIndex].tag">#{{ i
+                                }} </span></a><br>
                             <div class="titleModal">
                                 <h2 style="margin-right: 1rem;">{{ projectInfo[modalIndex].title }}</h2>
                                 <span v-if="projectInfo[modalIndex].sourceType == 'website'"><a class="contact_icon"
