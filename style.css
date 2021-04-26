@@ -113,9 +113,18 @@ body {
 
 /* footers */
 
+.bg-footer {
+    background: #e7e7e7;
+    text-align: center;
+}
+
 .footer {
-    padding: 3em;
+    padding: 2.5em;
     background: var(--ci4);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     color: #fff;
     text-align: center;
 }
