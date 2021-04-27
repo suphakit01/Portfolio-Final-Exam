@@ -224,7 +224,8 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true" tabindex="-1" id="myModal">
+        <div class="modal" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel"
+            aria-hidden="true" tabindex="-1" id="myModal">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -233,7 +234,12 @@
                     </div>
                     <div class="modal-body">
                         <!-- video embled -->
-                        <iframe v-if="projectInfo[modalIndex].sourceType == 'video'" width="100%" height="450"
+                        <iframe class="d-none d-sm-block" v-if="projectInfo[modalIndex].sourceType == 'video'" width="100%" height="450"
+                            :src="srcEmbd"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen frameborder="0"></iframe>
+
+                        <iframe class="d-sm-none" v-if="projectInfo[modalIndex].sourceType == 'video'" width="100%" height="240"
                             :src="srcEmbd"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen frameborder="0"></iframe>
