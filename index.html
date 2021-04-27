@@ -224,7 +224,7 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal" tabindex="-1" id="myModal">
+        <div class="modal" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true" tabindex="-1" id="myModal">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -262,9 +262,9 @@
                                     }} </span></a><br>
                             <div class="titleModal">
                                 <h2 style="margin-right: 1rem;">{{ projectInfo[modalIndex].title }}</h2>
-                                <span v-if="projectInfo[modalIndex].sourceType == 'website'"><a class="contact_icon"
+                                <span v-if="projectInfo[modalIndex].sourceType == 'website'"><a class="newLink"
                                         :href="projectInfo[modalIndex].link" target="_blank"><i
-                                            class="fad fa-external-link"></i></a></span>
+                                            class="fad fa-external-link newLink"></i></a></span>
                             </div>
                             <br><br>
                             <p v-html="projectInfo[modalIndex].detail"></p>

@@ -6,6 +6,10 @@
     --Prompt: 'Prompt', sans-serif !important;
 }
 
+html {
+    overflow-x: hidden !important;
+}
+
 body {
     color: var(--ci1);
     font-family: var(--Prompt);
@@ -98,6 +102,10 @@ body {
 }
 
 /* my modal */
+
+.newLink:hover {
+    color: #5073b8;
+}
 
 .titleModal {
     display: inline-flex;
