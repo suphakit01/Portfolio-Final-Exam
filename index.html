@@ -234,13 +234,13 @@
                     </div>
                     <div class="modal-body">
                         <!-- video embled -->
-                        <iframe class="d-none d-sm-block" v-if="projectInfo[modalIndex].sourceType == 'video'" width="100%" height="450"
-                            :src="srcEmbd"
+                        <iframe class="d-none d-sm-block" v-if="projectInfo[modalIndex].sourceType == 'video'"
+                            width="100%" height="450" :src="srcEmbd"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen frameborder="0"></iframe>
 
-                        <iframe class="d-sm-none" v-if="projectInfo[modalIndex].sourceType == 'video'" width="100%" height="240"
-                            :src="srcEmbd"
+                        <iframe class="d-sm-none" v-if="projectInfo[modalIndex].sourceType == 'video'" width="100%"
+                            height="240" :src="srcEmbd"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen frameborder="0"></iframe>
                         <!-- slide image -->
@@ -302,6 +302,21 @@
             srcEmbd: "",
             projectInfo: [
                 {
+                    title: "The Flash",
+                    tag: [
+                        "Unreal Engine",
+                        "Cinematics",
+                        "VFX"
+                    ],
+                    detail: "Advanced Game Development 2020 | KMITL©Suphakit Nachom (creative, VFX, Lighting, Cinematics)",
+                    cover: "Theflash.jpg",
+                    date: "May 2021",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/UEsCFd7dZog"
+                    ]
+                }, {
                     title: "The Bermuda",
                     tag: [
                         "Unreal Engine",
@@ -392,6 +407,49 @@
                     ]
                 },
                 {
+                    title: "[VTR] IT Ambassador 2019",
+                    tag: [
+                        "Video"
+                    ],
+                    detail: "[VTR] IT Ambassador 2019 | KMITL<br>©Suphakit Nachom",
+                    cover: "ItAmbass.png",
+                    date: "Nov 2019",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://drive.google.com/file/d/1bfuwR6ONReGDApRCT2GRdRoAEDnKcWZS/preview"
+                    ]
+                },
+                {
+                    title: "[VTR] IT Ambassador 2019",
+                    tag: [
+                        "Video"
+                    ],
+                    detail: "IT CAMP 15<br>30th May 2019 - 2nd June 2019<br>Faculty of Information Technology<br>King Monkut's Institute of Technology Ladkrabang",
+                    cover: "ItCamp.jpg",
+                    date: "May 2019",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/EOZc1xZoVz4"
+                    ]
+                },
+                {
+                    title: "[NSC 2021] Tiny House Prototype",
+                    tag: [
+                        "Video",
+                        "NSC"
+                    ],
+                    detail: "ผ่านเข้ารอบคัดเลือกการแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย ครั้งที่ ๒๓<br>The Twenty-Third National Software Contest (NSC 2021)",
+                    cover: "Nsc.png",
+                    date: "Sep 2019",
+                    sourceType: "video",
+                    link: "",
+                    src: [
+                        "https://www.youtube.com/embed/ZOpFJdvD2Lk"
+                    ]
+                },
+                {
                     title: "Adlenture",
                     tag: [
                         "Website"
@@ -442,50 +500,7 @@
                         "Slum_3",
                         "Slum_4"
                     ]
-                },
-                {
-                    title: "[VTR] IT Ambassador 2019",
-                    tag: [
-                        "Video"
-                    ],
-                    detail: "[VTR] IT Ambassador 2019 | KMITL<br>©Suphakit Nachom",
-                    cover: "ItAmbass.png",
-                    date: "Nov 2019",
-                    sourceType: "video",
-                    link: "",
-                    src: [
-                        "https://drive.google.com/file/d/1bfuwR6ONReGDApRCT2GRdRoAEDnKcWZS/preview"
-                    ]
-                },
-                {
-                    title: "[VTR] IT Ambassador 2019",
-                    tag: [
-                        "Video"
-                    ],
-                    detail: "IT CAMP 15<br>30th May 2019 - 2nd June 2019<br>Faculty of Information Technology<br>King Monkut's Institute of Technology Ladkrabang",
-                    cover: "ItCamp.jpg",
-                    date: "May 2019",
-                    sourceType: "video",
-                    link: "",
-                    src: [
-                        "https://www.youtube.com/embed/EOZc1xZoVz4"
-                    ]
-                },
-                {
-                    title: "[NSC 2021] Tiny House Prototype",
-                    tag: [
-                        "Video",
-                        "NSC"
-                    ],
-                    detail: "ผ่านเข้ารอบคัดเลือกการแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย ครั้งที่ ๒๓<br>The Twenty-Third National Software Contest (NSC 2021)",
-                    cover: "Nsc.png",
-                    date: "Sep 2019",
-                    sourceType: "video",
-                    link: "",
-                    src: [
-                        "https://www.youtube.com/embed/ZOpFJdvD2Lk"
-                    ]
-                },
+                }
             ]
         },
         methods: {
